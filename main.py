@@ -30,7 +30,7 @@ acct = Account.from_key(private_key)
 # get signature from wallet
 signed=acct.signHash(challenge_txt)
 print("-----------")
-signed=str(signed["messageHash"])
+signed=signed["messageHash"]
 print(signed)
 print(str(signed))
 print("-----------")
