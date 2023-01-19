@@ -28,7 +28,7 @@ acct = Account.from_key(private_key)
 
       
 # get signature from wallet
-signed=acct.encode_defunct(text=challenge_txt)
+signed=acct.signHash(challenge_txt)
 
 # get address from wallet
 address=acct.address
