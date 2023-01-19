@@ -1,8 +1,7 @@
 import requests, json, web3
 from eth_account import Account
 import secrets
-
-
+import os
 
 endpoint = 'https://us-central1-carshare-naist-dev.cloudfunctions.net/api'
 challenge = "?auth=challenge"
@@ -29,7 +28,7 @@ acct = Account.from_key(private_key)
 
       
 # get signature from wallet
-signed=acct.sign_message(challenge_txt)
+signed=acct.hash_message(text=challenge_txt)
 
 # get address from wallet
 address=acct.address
@@ -48,3 +47,14 @@ if get.status_code == 200:
 else :
     print("token gen error")
     print(get.text)
+
+
+#notify on LINE
+
+import sys
+
+url = "https://notify-api.line.me/api/notify"
+headers = {"Authorization" : "Bearer "+ os.environ["LINE_API"]}
+payload = {"message" :  "テストメッセージ：車が見つかりました！"}
+r = requests.post(url ,headers = headers ,params=payload)
+
