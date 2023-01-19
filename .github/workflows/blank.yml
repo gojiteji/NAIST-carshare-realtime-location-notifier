@@ -32,5 +32,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run Python
-        env: LINE_API: ${{ secrets.LINE_API }}
+        env:
+          LINE_API: ${{ secrets.LINE_API }}
         run: python main.py
