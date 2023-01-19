@@ -29,7 +29,7 @@ acct = Account.from_key(private_key)
       
 # get signature from wallet
 signed=acct.signHash(challenge_txt)
-signed=str(signed)[305:437]
+signed=str(signed)[305:438]
 print("-----------")
 print(str(signed))
 print("-----------")
@@ -44,7 +44,7 @@ headers={
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15"
     }
 print("request:",endpoint+get_token+"&challenge="+challenge_txt+"&signature="+signed+"&address="+address)
-get = requests.get(endpoint+get_token+"&challenge="+challenge_txt, headers=headers)
+get = requests.get(endpoint+get_token+"&challenge="+challenge_txt+"&signature="+signed+"&address="+address, headers=headers)
 if get.status_code == 200:
     print(get.text)
     #challenge_txt=json.loads(get.text)["challenge"]
