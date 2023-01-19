@@ -29,9 +29,9 @@ acct = Account.from_key(private_key)
       
 # get signature from wallet
 signed=acct.signHash(challenge_txt)
+signed=signed["messageHash"]
 print("-----------")
 print(signed)
-print(type(signed))
 print("-----------")
 # get address from wallet
 address=acct.address
