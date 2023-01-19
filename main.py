@@ -35,7 +35,7 @@ print(str(signed))
 print("-----------")
 
 # get address from wallet
-address=acct.address
+address=str(acct.address)
 print("Address:", address)
 
 
