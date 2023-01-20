@@ -32,7 +32,7 @@ signed_=acct.signHash(challenge_txt)
 signed="0"+str(signed_)[306:437]
 print("-----------")
 print(str(signed))
-print(bytes(signed_["signature"])))
+print(bytes(signed_["signature"]))
 print((bytes(signed_["signature"]))).decode("utf-8"))
 
 print("-----------")
