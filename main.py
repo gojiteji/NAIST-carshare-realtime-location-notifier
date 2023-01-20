@@ -3,6 +3,7 @@ from web3.auto import w3
 from eth_account import Account
 import secrets
 import os
+from eth_account.messages import encode_defunct
 
 endpoint = 'https://us-central1-carshare-naist-dev.cloudfunctions.net/api'
 challenge = "?auth=challenge"
@@ -29,7 +30,7 @@ acct = Account.from_key(private_key)
 
       
 # get signature from wallet
-signed_=w3.eth.account.sign_message(challenge_txt, private_key=priv)
+signed_=w3.eth.account.sign_message(encode_defunct(challenge_txt), private_key=priv)
 print("-----------")
 print(str(signed_))
 print(bytes(signed_["signature"]))
