@@ -64,6 +64,8 @@ headers={
     "Authorization": "Bearer "+token
     }
 
+get = requests.get(endpoint+getlocation, headers=headers)
+
 if get.status_code == 200:
     print("geo:",get.text)
 else :
