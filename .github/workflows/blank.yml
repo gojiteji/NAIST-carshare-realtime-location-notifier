@@ -32,4 +32,4 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run Python
-        run: LINE_API=${{ secrets.LINE_API }} && python main.py
+        run: LINE_API=${{ secrets.LINE_API }} && echo $LINE_API && python main.py
