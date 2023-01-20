@@ -32,13 +32,9 @@ acct = Account.from_key(private_key)
 # get signature from wallet
 signed_=w3.eth.account.sign_message(encode_defunct(text=challenge_txt), private_key=priv)
 print("-----------")
-print(str(signed_))
-print("---")
-print(bytes(signed_["signature"]))
-print("---")
-print((bytes(signed_["signature"])).decode("utf-8"))
+print(str(signed_)[-136:-4])
 print("-----------")
-signed=(bytes(signed_["signature"])).decode("utf-8")
+signed=str(signed_)[-136:-4]
 
 # get address from wallet
 address=str(acct.address)
