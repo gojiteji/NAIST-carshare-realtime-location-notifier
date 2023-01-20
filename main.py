@@ -64,6 +64,7 @@ headers={
     "Authorization": "Bearer "+token
     }
 
+print(headers)
 get = requests.get(endpoint+getlocation, headers=headers)
 
 if get.status_code == 200:
