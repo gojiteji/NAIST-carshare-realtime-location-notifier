@@ -32,6 +32,7 @@ signed=acct.signHash(challenge_txt)
 signed="0"+str(signed)[306:437]
 print("-----------")
 print(str(signed))
+print(type(signed[signature])))
 print("-----------")
 
 # get address from wallet
@@ -61,5 +62,5 @@ url = "https://notify-api.line.me/api/notify"
 
 headers = {"Authorization" : "Bearer "+ os.environ.get("LINE_API")}
 payload = {"message" :  "テストメッセージ：車が見つかりました！"}
-r = requests.post(url ,headers = headers ,params=payload)
-print(r.text)
+#r = requests.post(url ,headers = headers ,params=payload)
+#print(r.text)
