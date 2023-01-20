@@ -32,6 +32,8 @@ acct = Account.from_key(private_key)
 # get signature from wallet
 signed_=w3.eth.account.sign_message(encode_defunct(text=challenge_txt), private_key=priv)
 print("-----------")
+print(str(signed_))
+print("----")
 print(str(signed_)[-136:-4])
 print("-----------")
 signed=str(signed_)[-136:-4]
@@ -48,7 +50,7 @@ headers={
 print("request:",endpoint+get_token+"&challenge="+challenge_txt+"&signature="+signed+"&address="+address)
 get = requests.get(endpoint+get_token+"&challenge="+challenge_txt+"&signature="+signed+"&address="+address, headers=headers)
 if get.status_code == 200:
-    print(get.text)
+    print("accessed:",get.text)
     #challenge_txt=json.loads(get.text)["challenge"]
 else :
     print("token gen error")
