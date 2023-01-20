@@ -28,7 +28,7 @@ acct = Account.from_key(private_key)
 
       
 # get signature from wallet
-signed_=acct.w3.eth.account.sign_message(challenge_txt, private_key=private_key)
+signed_=web3.eth.account.sign_message(challenge_txt, private_key=private_key)
 print("-----------")
 print(str(signed_))
 print(bytes(signed_["signature"]))
