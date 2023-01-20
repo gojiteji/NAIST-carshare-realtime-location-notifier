@@ -48,7 +48,7 @@ headers={
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15"
     }
 print("request:",endpoint+get_token+"&challenge="+challenge_txt+"&signature="+signed+"&address="+address)
-"""
+
 get = requests.get(endpoint+get_token+"&challenge="+challenge_txt+"&signature="+signed+"&address="+address, headers=headers)
 
 token=""
@@ -62,7 +62,7 @@ else :
 #get geo
 headers={
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15",
-    "Authorization": "Bearer "+token
+    "Authorization": "Bearer "+str(token)
     }
 
 print(headers)
@@ -85,4 +85,3 @@ headers = {"Authorization" : "Bearer "+ os.environ.get("LINE_API")}
 payload = {"message" :  "テストメッセージ：車が見つかりました！"}
 #r = requests.post(url ,headers = headers ,params=payload)
 #print(r.text)
-"""
