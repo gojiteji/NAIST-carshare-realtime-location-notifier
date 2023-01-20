@@ -1,4 +1,5 @@
 import requests, json, web3
+from web3.auto import w3
 from eth_account import Account
 import secrets
 import os
@@ -28,7 +29,7 @@ acct = Account.from_key(private_key)
 
       
 # get signature from wallet
-signed_=web3.eth.account.sign_message(challenge_txt, private_key=private_key)
+signed_=w3.eth.account.sign_message(challenge_txt, private_key=private_key)
 print("-----------")
 print(str(signed_))
 print(bytes(signed_["signature"]))
