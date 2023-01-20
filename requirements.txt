@@ -1,5 +1,4 @@
 protobuf==3.19.6
 requests
 web3==5.0.0
-eth-account==0.4.0
-line-bot-sdk
+eth-account
