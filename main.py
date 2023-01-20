@@ -61,7 +61,7 @@ else :
 #get geo
 headers={
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15",
-    "Authorization: Bearer "+token
+    "Authorization": "Bearer "+token
     }
 
 if get.status_code == 200:
