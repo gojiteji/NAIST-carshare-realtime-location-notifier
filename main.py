@@ -30,7 +30,7 @@ acct = Account.from_key(private_key)
 
       
 # get signature from wallet
-signed_=w3.eth.account.sign_message(encode_defunct(challenge_txt), private_key=priv)
+signed_=w3.eth.account.sign_message(encode_defunct(text=challenge_txt), private_key=priv)
 print("-----------")
 print(str(signed_))
 print(bytes(signed_["signature"]))
