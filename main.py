@@ -32,7 +32,7 @@ signed=acct.signHash(challenge_txt)
 signed="0"+str(signed)[306:437]
 print("-----------")
 print(str(signed))
-print(type(signed[signature])))
+print(type(signed[signature]))
 print("-----------")
 
 # get address from wallet
