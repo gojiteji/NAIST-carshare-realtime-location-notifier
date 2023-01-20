@@ -58,6 +58,7 @@ else :
 import sys
 
 url = "https://notify-api.line.me/api/notify"
+print("token:",os.environ.get("LINE_API"))
 headers = {"Authorization" : "Bearer "+ os.environ.get("LINE_API")}
 payload = {"message" :  "テストメッセージ：車が見つかりました！"}
 r = requests.post(url ,headers = headers ,params=payload)
