@@ -28,14 +28,14 @@ acct = Account.from_key(private_key)
 
       
 # get signature from wallet
-signed_=acct.signHash(challenge_txt)
+signed_=acct.sign_message(challenge_txt)
 signed="0"+str(signed_)[306:437]
 print("-----------")
-print(str(signed))
+print(str(signed_))
 print(bytes(signed_["signature"]))
 print((bytes(signed_["signature"])).decode("utf-8"))
-
 print("-----------")
+signed=(bytes(signed_["signature"])).decode("utf-8")
 
 # get address from wallet
 address=str(acct.address)
