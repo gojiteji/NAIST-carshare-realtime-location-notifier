@@ -49,13 +49,27 @@ headers={
     }
 print("request:",endpoint+get_token+"&challenge="+challenge_txt+"&signature="+signed+"&address="+address)
 get = requests.get(endpoint+get_token+"&challenge="+challenge_txt+"&signature="+signed+"&address="+address, headers=headers)
+
+token=""
 if get.status_code == 200:
     print("accessed:",get.text)
-    #challenge_txt=json.loads(get.text)["challenge"]
+    token=json.loads(get.text)["token"]
 else :
     print("token gen error")
     print(get.text)
+    
+#get geo
+headers={
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15",
+    "Authorization: Bearer "+token
+    }
 
+if get.status_code == 200:
+    print("geo:",get.text)
+else :
+    print("token acess error")
+    print(get.text)
+    
 
 #notify on LINE
 
